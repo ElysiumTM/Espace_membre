@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 Inscription
+  form(action="/register", method="POST")
+    // Affichez les messages flash d'erreur ici s'ils existent
+    if flash_error
+      .alert.alert-danger
+        each message in flash_error
+          p= message
+
+    label(for="firstName") Prénom
+    input(type="text", name="firstName", required)
+
+    label(for="lastName") Nom de famille
+    input(type="text", name="lastName", required)
+
+    label(for="email") Adresse email
+    input(type="email", name="email", required)
+
+    label(for="password") Mot de passe
+    input(type="password", name="password", required)
+
+    label(for="confirmPassword") Confirmez le mot de passe
+    input(type="password", name="confirmPassword", required)
+
+    button(type="submit") S'inscrire

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 Tableau de bord
+  p Bienvenue, #{user.firstName} #{user.lastName} ! <!-- Utilisez les données de l'utilisateur authentifié pour personnaliser la page -->
+  // Autres informations du tableau de bord...
+
+  a(href="/logout") Se déconnecter <!-- Ajoutez un lien pour se déconnecter -->
