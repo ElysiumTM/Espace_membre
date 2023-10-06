@@ -35,3 +35,15 @@ exports.signup = (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
  };
+
+ exports.logout = (req, res) => {
+    console.log("logout")
+
+    req.session.destroy((err) => {
+        if(err){
+            res.status(500).send(err.message);
+            return
+        }
+        res.redirect('/signin')
+    })
+}

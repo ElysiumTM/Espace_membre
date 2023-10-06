@@ -1,0 +1,22 @@
+.ui.inverted.menu
+  .left.menu
+    a.item(href='/')
+      i.home.icon
+      | Dashboard
+
+  .right.menu
+    if user == null
+      a.item(href='/signup' class=(currentPath === '/signup' ?'active' : ''))
+        i.sign-in.icon
+        | Inscription
+      a.item(href='/signin' class=(currentPath === '/signin' ?'active' : ''))
+        i.sign-in.icon
+        | Connexion
+    if user !== null
+      span.item
+        i.user.icon
+      div.item  #{user.firstName} #{user.lastName}
+      
+      a.item(href='/logout')
+        i.sign-out.icon
+        | Déconnexion
